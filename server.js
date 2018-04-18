@@ -19,7 +19,7 @@ app.set('view engine', 'hbs');
 //in this case, log every request
 app.use((req, res, next) => {
   var now = new Date().toString();
-  
+
   var log = `${now}: ${req.method} ${req.url}`;
   console.log(log);
   fs.appendFile('server.log', log + '\n', (err) => {
@@ -65,7 +65,7 @@ app.get('/bad', (req, res) => {
 
 app.get('/projects', (req, res) => {
   res.render('projects.hbs', {
-    pageTitle: 'Projects Page'
+    pageTitle: 'Projects'
   });
 });
 
