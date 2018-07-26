@@ -1,14 +1,16 @@
 //Load in modules
 const express = require('express');
-const hbs = require('hbs');
-const fs = require('fs');
+const hbs = require('hbs'); //handlebars
+const fs = require('fs'); //filesystem
+const favicon = require('serve-favicon');
+const path = require('path');
 
 //Get port from environment variable if possible. Necessary to work with Heroku.
 const port = process.env.PORT || 3000;
 
 //Express is a web framework for node
 var app = express();
-
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 //Tell Handlebars where to find partial views.
 hbs.registerPartials(__dirname + '/views/partials');
 
@@ -47,7 +49,7 @@ hbs.registerHelper('screamIt', (text) => {
 app.get('/', (req, res) => {
   res.render('home.hbs', {
       pageTitle: 'Home Page',
-      welcomeMessage: 'Velcome to my lair'
+      welcomeMessage: 'Last Stop'
   })
 });
 

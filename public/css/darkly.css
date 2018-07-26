@@ -177,6 +177,10 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 
+li {
+  display: inline;
+}
+
 a:hover {
   color: #007053;
   text-decoration: underline;

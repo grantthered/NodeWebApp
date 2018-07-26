@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Some Website</title>
-    <link rel="stylesheet" type="text/css" href="css/darkly.css"
+    {{> commonHeader}}
   </head>
   <body>
     {{> header}}
     <p>{{screamIt welcomeMessage}}</p>
+    <video width="320" height="240" controls>
+      <source src="Random.webm" type="video/webm">
+    </video>
     {{> footer}}
   </body>
 </html>
